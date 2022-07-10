@@ -43,14 +43,13 @@ export const store = createStore<State>({
 		fetchStats: async ({ commit }) => {
 			let downloads = 0;
 			let stars = 0;
-			let contributors = 0;
 
 			const toJSON = (res: Response) => res.json();
 			// eslint-disable-next-line @typescript-eslint/no-empty-function
 			const noop = () => {};
 
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-			const [fetchedDownloads, fetchedStars, fetchedContributors] = await Promise.all([
+			const [fetchedDownloads, fetchedStars] = await Promise.all([
 				fetch('https://api.github.com/repos/Ortygia/deaftone').then(toJSON, noop),
 				fetch('https://api.github.com/repos/Ortygia/deaftone/stats/contributors').then(toJSON, noop),
 			]);
@@ -66,16 +65,11 @@ export const store = createStore<State>({
 				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
 				stars = fetchedStars.stargazers_count;
 			}
-			if (fetchedContributors) {
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
-				contributors = fetchedContributors.length;
-			}
 			commit({
 				type: 'setStats',
 				stats: {
 					downloads: `${downloads.toLocaleString()}+`,
 					stars: `${stars.toLocaleString()}+`,
-					contributors: `${contributors.toLocaleString()}+`,
 				},
 			});
 		},
