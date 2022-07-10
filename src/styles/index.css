@@ -58,7 +58,7 @@
 
 	.custom-scroll {
 		scrollbar-width: thin;
-		scrollbar-color: theme('colors.discord.blurple.460') #1d1d1d;
+		scrollbar-color: theme('colors.discord.blurple.900') #1d1d1d;
 	}
 
 	.custom-scroll::-webkit-scrollbar {
@@ -67,11 +67,11 @@
 	}
 
 	.custom-scroll::-webkit-scrollbar-thumb {
-		background: theme('colors.discord.blurple.460');
+		background: theme('colors.discord.blurple.900');
 	}
 
 	.custom-scroll::-webkit-scrollbar-thumb:hover {
-		background: theme('colors.discord.blurple.430');
+		background: theme('colors.discord.blurple.900');
 	}
 
 	.custom-scroll::-webkit-scrollbar-track {
