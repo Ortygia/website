@@ -8,7 +8,7 @@
 						class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
 						active-class="bg-discord-blurple-600"
 					>
-						discord.js
+						deaftone
 					</router-link>
 
 					<router-link
@@ -18,15 +18,6 @@
 					>
 						Documentation
 					</router-link>
-
-					<a
-						href="https://discordjs.guide"
-						class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-						target="_blank"
-						rel="noopener"
-					>
-						<span class="mr-2">Guide</span><heroicons-outline-external-link class="h-5 w-5" />
-					</a>
 
 					<a
 						:href="`https://github.com/${repository}`"
@@ -161,7 +152,7 @@
 							to="/"
 							class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white block rounded-md py-2 px-3 text-base font-semibold"
 							@click="isOpen = !isOpen"
-							>discord.js</router-link
+							>deaftone</router-link
 						>
 
 						<router-link
@@ -178,15 +169,6 @@
 							rel="noopener"
 							@click="isOpen = !isOpen"
 							><span class="mr-2">Github</span><heroicons-outline-external-link class="h-5 w-5 inline-block"
-						/></a>
-
-						<a
-							href="https://discordjs.guide"
-							class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white block rounded-md py-2 px-3 text-base font-semibold"
-							target="_blank"
-							rel="noopener"
-							@click="isOpen = !isOpen"
-							><span class="mr-2">Guide</span><heroicons-outline-external-link class="h-5 w-5 inline-block"
 						/></a>
 					</div>
 				</nav>
@@ -215,7 +197,7 @@ const searchInput = ref('');
 const isSearchOpen = ref(false);
 const searchScrollPosition = ref(-1);
 
-const repository = computed(() => store.state.source?.repo);
+const repository = computed(() => "Ortygia/Deaftone");
 const searchResults = computed(() => {
 	// eslint-disable-next-line vue/no-side-effects-in-computed-properties
 	searchScrollPosition.value = -1;

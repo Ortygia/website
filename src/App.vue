@@ -14,9 +14,6 @@
 <script setup lang="ts">
 import { useStore } from './store';
 
-import Navbar from '~/components/Navbar.vue';
-import SWBanner from '~/components/SWBanner.vue';
-
 const store = useStore();
 
 void store.dispatch('fetchStats');
