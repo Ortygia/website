@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { useStore } from './store';
-
+import Navbar from '~/components/Navbar.vue';
 const store = useStore();
 
 void store.dispatch('fetchStats');
