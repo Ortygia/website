@@ -38,7 +38,7 @@ export default defineConfig({
 				start_url: '.',
 				display: 'standalone',
 				description:
-					"deaftone is a powerful Node.js module that allows you to interact with the Discord API very easily. It takes a much more object-oriented approach than most other JS Discord libraries, making your bot's code significantly tidier and easier to comprehend.",
+					"deaftone",
 				icons: [
 					{
 						src: '/android-chrome-192x192.png',
