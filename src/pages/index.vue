@@ -20,6 +20,7 @@
 			<ul>
 				<li>Speedy and efficient</li>
 				<li>Clean API</li>
+        <li>Metadata first</li>
 			</ul>
 		</div>
 	</div>
