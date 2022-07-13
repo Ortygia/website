@@ -1,27 +1,30 @@
 <template>
-	<div class="min-h-full grid grid-layout">
-		<Navbar />
-		<div id="container" class="grid grid-layout-container lg:custom-scroll">
-			<div class="bg-white dark:bg-[#1d1d1d]">
-				<router-view />
-			</div>
-			<Footer />
-		</div>
-	</div>
-	<SWBanner />
+  <div class="min-h-full grid grid-layout">
+    <Navbar />
+    <div
+      id="container"
+      class="grid grid-layout-container lg:custom-scroll"
+    >
+      <div class="bg-white dark:bg-[#1d1d1d]">
+        <router-view />
+      </div>
+      <Footer />
+    </div>
+  </div>
+  <SWBanner />
 </template>
 
 <script setup lang="ts">
-import { useStore } from './store';
-import Navbar from '~/components/Navbar.vue';
-const store = useStore();
+import { useStore } from './store'
+import Navbar from '~/components/Navbar.vue'
+const store = useStore()
 
-void store.dispatch('fetchStats');
+void store.dispatch('fetchStats')
 </script>
 
 <style>
 .grid-layout {
-	grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 .grid-layout-container {

@@ -65,65 +65,6 @@
 								aria-hidden="true"
 							/>
 						</button>
-						<div v-if="route.path !== '/'" ref="searchElement" class="w-full sm:max-w-lg lg:max-w-xs">
-							<label for="search" class="sr-only">Search</label>
-							<div class="relative">
-								<div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center" aria-hidden="true">
-									<heroicons-outline-search class="h-5 w-5 text-gray-200" />
-								</div>
-								<input
-									id="search"
-									v-model="searchInput"
-									name="search"
-									class="block w-full bg-discord-blurple-600 border border-transparent rounded-md py-2 pl-10 pr-3 text-base text-white placeholder-gray-200 focus:outline-none focus:bg-discord-blurple-630 focus:text-gray-200 focus:placeholder-gray-200 focus:ring-2 focus:ring-inset focus:ring-white lg:focus:ring-1"
-									placeholder="Search"
-									type="search"
-									autocomplete="off"
-									autocapitalize="off"
-									autocorrect="off"
-									@focus="isSearchOpen = true"
-									@input="isSearchOpen = true"
-									@keyup.enter="handleSearch"
-									@keydown.up="searchScrollUp"
-									@keydown.down="searchScrollDown"
-								/>
-								<div
-									v-if="isSearchOpen && searchInput && searchResults.length"
-									class="absolute cursor-pointer inset-y-0 right-0 pr-3 flex items-center"
-									aria-hidden="true"
-									@click="handleSearch"
-								>
-									<heroicons-outline-arrow-right class="h-5 w-5 text-gray-200" />
-								</div>
-								<div
-									v-if="isSearchOpen && searchInput && searchResults.length"
-									class="absolute mt-1 w-full break-words-legacy border bg-discord-blurple-600 rounded-md"
-									@mouseover="searchMouseMove"
-								>
-									<ul>
-										<li
-											v-for="(result, index) in searchResults"
-											:key="result.computedName"
-											class="even:bg-discord-blurple-560 dark:even:bg-discord-blurple-630 hover:bg-discord-blurple-630 dark:hover:bg-discord-blurple-660 rounded-md text-gray-200"
-											:class="{
-												'ring-1 ring-gray-200 even:bg-discord-blurple-630 dark:even:bg-discord-blurple-660 bg-discord-blurple-630 dark:bg-discord-blurple-660':
-													index === searchScrollPosition,
-											}"
-										>
-											<router-link
-												class="block focus:outline-none py-3 px-4 focus-visible:ring-1 focus-visible:ring-gray-200 focus-visible:rounded-md focus-visible:bg-discord-blurple-630 dark:focus-visible:bg-discord-blurple-660"
-												exact
-												:to="result.getLinkPath()"
-												:data-index="index"
-												@click="isSearchOpen = false"
-											>
-												{{ result.computedName }}
-											</router-link>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div class="relative z-10 flex items-center md:hidden">
 						<button
@@ -161,7 +102,12 @@
 							@click="isOpen = !isOpen"
 							>Documentation</router-link
 						>
-
+						<router-link
+							to="/clients"
+							class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white block rounded-md py-2 px-3 text-base font-semibold"
+							@click="isOpen = !isOpen"
+							>Clients</router-link
+						>
 						<a
 							:href="`https://github.com/${repository}`"
 							class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white block rounded-md py-2 px-3 text-base font-semibold"
