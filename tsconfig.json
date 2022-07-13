@@ -16,8 +16,7 @@
 			"~/*": ["src/*"]
 		},
 		"types": ["vite/client", "vite-plugin-pages/client", "vite-plugin-pwa/client", "unplugin-icons/types/vue"],
-		"skipLibCheck": true,
-		"noUnusedLocals": true
+		"skipLibCheck": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
