@@ -11,14 +11,20 @@
 						deaftone
 					</router-link>
 
-					<router-link
+<!-- 					<router-link
 						to="/docs"
 						class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
 						active-class="bg-discord-blurple-600"
 					>
 						Documentation
+					</router-link> -->
+					<router-link
+						to="/clients"
+						class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
+						active-class="bg-discord-blurple-600"
+					>
+						Clients
 					</router-link>
-
 					<a
 						:href="`https://github.com/${repository}`"
 						class="text-gray-200 hover:bg-discord-blurple-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
