@@ -3,16 +3,16 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
+export {}
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BackToTop: typeof import('./src/components/BackToTop.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
-    HeroiconsOutlineArrowRight: typeof import('~icons/heroicons-outline/arrow-right')['default']
     HeroiconsOutlineDownload: typeof import('~icons/heroicons-outline/download')['default']
     HeroiconsOutlineExternalLink: typeof import('~icons/heroicons-outline/external-link')['default']
     HeroiconsOutlineMenu: typeof import('~icons/heroicons-outline/menu')['default']
     HeroiconsOutlineMoon: typeof import('~icons/heroicons-outline/moon')['default']
-    HeroiconsOutlineSearch: typeof import('~icons/heroicons-outline/search')['default']
     HeroiconsOutlineSun: typeof import('~icons/heroicons-outline/sun')['default']
     HeroiconsOutlineX: typeof import('~icons/heroicons-outline/x')['default']
     InstallButton: typeof import('./src/components/InstallButton.vue')['default']
@@ -25,5 +25,3 @@ declare module '@vue/runtime-core' {
     SWBanner: typeof import('./src/components/SWBanner.vue')['default']
   }
 }
-
-export {}
